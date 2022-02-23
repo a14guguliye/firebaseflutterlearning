@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054381426342",
+    "project_id": "fir-learning-43ea7",
+    "storage_bucket": "fir-learning-43ea7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054381426342:android:d6215f2d4f7fe985b39667",
+        "android_client_info": {
+          "package_name": "com.example.flutte_fire_learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054381426342-t3geslglf5fgv393ok0pravgfq719h1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDek7mramlSjGqoIbROxuKyCDtwLnJzGKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054381426342-t3geslglf5fgv393ok0pravgfq719h1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
