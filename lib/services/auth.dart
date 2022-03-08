@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutte_fire_learning/models/user.dart';
+import 'package:flutte_fire_learning/services/firestore.dart';
 
 class AuthService {
   Users? _userFromFirebaseUser(User? user) {
@@ -15,14 +16,29 @@ class AuthService {
     return currentUser;
   }
 
+  Future signInWithEmailandPassword(String email, String password) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      User? newUser = userCredential.user;
+
+      return _userFromFirebaseUser(newUser);
+    } catch (e) {
+      return null;
+    }
+  }
+
   Future signUpWithEmailandPassword(String email, String password) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
       User? newUser = userCredential.user;
+      if (newUser != null) {
+        await DataBaseService(uid: newUser.uid)
+            .updateUserData('0', 'new brew crew member', 100);
+      }
       return _userFromFirebaseUser(newUser);
     } catch (e) {
-      print("error is $e");
       return null;
     }
   }
@@ -32,6 +48,7 @@ class AuthService {
     try {
       UserCredential result = await FirebaseAuth.instance.signInAnonymously();
       User? finalUser = result.user;
+
       return _userFromFirebaseUser(finalUser);
     } catch (e) {
       return null;

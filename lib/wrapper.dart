@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutte_fire_learning/screens/authenticate/authenticate.dart';
-import 'package:flutte_fire_learning/screens/authenticate/sign_in.dart';
 import 'package:flutte_fire_learning/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
